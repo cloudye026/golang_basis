@@ -57,7 +57,7 @@ go vet ./...
 
 - `github.com/shopspring/decimal`：在 `03-float` 中用于演示十进制高精度计算（加/减/乘/除）。
 
-## 扩展与新增示例
+### 扩展与新增示例
 
 建议以序号创建新主题目录，例如 `04-bool/`、`05-string/`、`06-slice/` 等，并在其中添加 `main.go`：
 
