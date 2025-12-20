@@ -73,7 +73,7 @@ func main() {
 
 然后使用 `go run ./04-bool` 运行。
 
-## 参考
+### 参考
 
 - Go 官方文档与语言规范：https://go.dev/doc/
 - `shopspring/decimal` 项目主页：https://github.com/shopspring/decimal
