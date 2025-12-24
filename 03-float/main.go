@@ -17,7 +17,7 @@ func main() {
 
 	fmt.Println(a)
 	// 浮点数 32 位占 4 个字节
-	fmt.Println(unsafe.Sizeof(a))
+	fmt.Println("float32", unsafe.Sizeof(a))
 
 	// 保留 小数 %.2f 两位 %.4f 四位 四舍五入
 
@@ -27,6 +27,7 @@ func main() {
 	f64 := 3.121592653
 
 	fmt.Printf("%T\n", f64)
+	fmt.Println("float64", unsafe.Sizeof(f64))
 
 	num := 120
 
@@ -54,8 +55,7 @@ func main() {
 
 	fmt.Println(n3)
 
-
-	// 类型转换 int 类型 转 float 类型 
+	// 类型转换 int 类型 转 float 类型
 
 	a1 := 10
 	b1 := float64(a1)
@@ -65,7 +65,7 @@ func main() {
 	// float 转 int 类型 (不建议转换)
 
 	f6 := 3.14
-  i1 := int(f6)
+	i1 := int(f6)
 
-	fmt.Printf("%v\n%T\n%v\n%T", f6, f6, i1,i1)
+	fmt.Printf("%v\n%T\n%v\n%T", f6, f6, i1, i1)
 }
