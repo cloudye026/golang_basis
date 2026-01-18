@@ -90,7 +90,7 @@ func main() {
 	fmt.Println(strings.LastIndex(hello, "l"))
 
 	fmt.Println(len(hello))
-
+	
 	// 查找 前缀/后缀 strings.HasPrefix strings.HasSuffix 返回 bool
 	fmt.Println(strings.HasPrefix(str, s))
 	fmt.Println(strings.HasSuffix(str, tr))
