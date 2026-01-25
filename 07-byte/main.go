@@ -4,6 +4,36 @@ import (
 	"fmt"
 )
 
+// 定义结构体关键字 struct
+
+type hobby struct {
+	Food string
+	Cake string
+}
+type person struct {
+	Name  string
+	Age   int
+	City  string
+	hobby hobby
+}
+
+// 创建结构体的多种方式
+type Person struct {
+	Name string
+	Age  int
+}
+
+func SetAge(p *Person) {
+	p.Age = 100
+}
+
+// 匿名字段(嵌入)
+
+type Food struct {
+	string
+	int
+}
+
 func main() {
 	// 类型别名
 	/**
@@ -37,7 +67,7 @@ func main() {
 	// 类型别名 vs 类型定义
 
 	// 区别:
-	//  类型别名 (用 =)
+	// 类型别名 (用 =)
 	//	type byte = uint8 // byte 和 uint8 完全相同
 
 	// 类型定义 (不用 =)
@@ -55,4 +85,62 @@ func main() {
 
 	fmt.Println(num2)
 
+	// 创建结构体实列
+	p := person{
+		Name: "小明",
+		Age:  18,
+		City: "北京",
+		// 嵌套结构体
+		hobby: hobby{
+			Food: "芒果",
+			Cake: "零食",
+		},
+	}
+
+	// 访问字段
+	fmt.Println(p.Name)
+	fmt.Println(p.hobby.Food)
+
+	// 修改字段
+
+	p.Age = 19
+	fmt.Println(p.Age) // 输出: 19
+
+	// 1. 指定字段名
+
+	p1 := Person{
+		Name: "小明",
+		Age:  18,
+	}
+
+	// 2. 按顺序赋值(不推荐,容易出错)
+
+	p2 := Person{"小红", 19}
+
+	// 3. 零值初始化
+
+	var p3 Person // Name="" Age=0
+
+	// 4. 使用 new (返回指针)
+
+	p4 := new(Person) // *Person 类型
+
+	p4.Name = "王五"
+
+	// 5. 取地址
+
+	p5 := &Person{
+		Name: "小紫",
+		Age:  23,
+	}
+
+	SetAge(p5)
+	fmt.Println("p5 value ", p5)
+
+	fmt.Println(p1)
+	fmt.Println(p2)
+	fmt.Println(p3)
+
+	p6 := Food{"菠萝", 2,}
+	fmt.Println(p6.string)
 }
