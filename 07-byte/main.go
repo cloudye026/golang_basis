@@ -34,6 +34,26 @@ type Food struct {
 	int
 }
 
+// 结构体方法
+
+// 定义方法
+func (p Person) SayHello() {
+	fmt.Println("hello my name is %s\n", p.Name)
+}
+
+
+func (f Food) MyHobby() {
+	fmt.Println("i like food is ", f.string)
+}
+
+// 修改字段需要用指针接收
+// 指针接收者 方法内修改会影响原始结构体
+
+func (p *Person) EditPersonAge(newAge int) {
+	 p.Age = newAge
+}
+
+
 func main() {
 	// 类型别名
 	/**
@@ -113,6 +133,7 @@ func main() {
 		Age:  18,
 	}
 
+	fmt.Println("log p1",p1)
 	// 2. 按顺序赋值(不推荐,容易出错)
 
 	p2 := Person{"小红", 19}
@@ -143,4 +164,19 @@ func main() {
 
 	p6 := Food{"菠萝", 2,}
 	fmt.Println(p6.string)
+
+
+	p7 := Person{
+		Name: "结构方法体",
+	}
+
+	p8 := Food{"芒果",3,}
+
+	p7.SayHello()
+
+	p8.MyHobby()
+
+	// p1 是值类型，但Go会自动转换为指针调用指针方法
+	p1.EditPersonAge(20) // 注意调用顺序
+	fmt.Println("edit age then value is " , p1.Age)
 }
