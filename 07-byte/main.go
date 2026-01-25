@@ -53,6 +53,30 @@ func (p *Person) EditPersonAge(newAge int) {
 	 p.Age = newAge
 }
 
+// 用户信息
+type User struct {
+    ID       int
+    Username string
+    Email    string
+    Password string
+}
+
+// 商品信息
+type Product struct {
+    ID    int
+    Name  string
+    Price float64
+    Stock int
+}
+
+// 订单信息
+type Order struct {
+    OrderID   string
+    User      User      // 嵌套
+    Products  []Product // 切片
+    Total     float64
+    CreatedAt string
+}
 
 func main() {
 	// 类型别名
@@ -179,4 +203,8 @@ func main() {
 	// p1 是值类型，但Go会自动转换为指针调用指针方法
 	p1.EditPersonAge(20) // 注意调用顺序
 	fmt.Println("edit age then value is " , p1.Age)
+
+
+
+	
 }
