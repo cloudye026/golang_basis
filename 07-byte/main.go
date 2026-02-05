@@ -204,7 +204,4 @@ func main() {
 	p1.EditPersonAge(20) // 注意调用顺序
 	fmt.Println("edit age then value is " , p1.Age)
 
-
-
-	
 }
