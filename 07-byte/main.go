@@ -78,6 +78,11 @@ type Order struct {
     CreatedAt string
 }
 
+
+// 标签（Tag）
+
+
+
 func main() {
 	// 类型别名
 	/**
@@ -203,5 +208,14 @@ func main() {
 	// p1 是值类型，但Go会自动转换为指针调用指针方法
 	p1.EditPersonAge(20) // 注意调用顺序
 	fmt.Println("edit age then value is " , p1.Age)
+
+
+
+
+	s := "你好"
+
+	fmt.Println(len(s))
+
+	fmt.Println(len([]rune(s)))
 
 }
